@@ -29,3 +29,17 @@ def test_subtract_two_numbers():
     res = c.sub(10, 3)
 
     assert res == 7
+
+
+def test_mul_two_numbers():
+    c = Calc()
+
+    res = c.mul(5,2)
+
+    assert res == 10
+
+
+def test_mul_any_numbers():
+    s = range(1,10)
+
+    assert Calc().mul(*s) == 362880
