@@ -1,3 +1,5 @@
+import pytest
+
 from calc.calc import Calc
 
 def test_add_two_numbers():
@@ -52,3 +54,15 @@ def test_div_two_numbers_float():
 
     assert res == 6.5
 
+def test_div_by_zero_returns_inf():
+    c = Calc()
+
+    res = c.div(10, 0)
+
+    assert res =='inf'
+
+def test_mul_by_zero_raise_exception():
+    c = Calc()
+
+    with pytest.raises(ValueError):
+        c.mul(3, 0)
