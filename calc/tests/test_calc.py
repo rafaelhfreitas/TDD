@@ -66,3 +66,18 @@ def test_mul_by_zero_raise_exception():
 
     with pytest.raises(ValueError):
         c.mul(3, 0)
+
+def test_avg_correct_average():
+    c = Calc()
+
+    res = c.avg([2, 5, 12, 98])
+
+    assert res == 29.25
+
+def test_avg_removes_upper_outliers():
+    c = Calc()
+
+    res = c.avg([2, 5, 12, 98], ut =90)
+
+
+    assert res == pytest.approx(6.333333)

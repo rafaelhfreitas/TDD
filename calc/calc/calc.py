@@ -19,3 +19,13 @@ class Calc():
             return a / b
         except ZeroDivisionError:
             return 'inf'
+
+    def avg(self, it, ut=None):
+        if not ut:
+            return sum(it)/len(it)
+
+        _it = [x for x in it if x <= ut]
+
+        return sum(_it)/len(_it)
+
+
